@@ -1,0 +1,688 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+/* $red : #f00;
+$black : #000;
+$white : #fff;
+$light-white : #aaa;
+$light-bg : #111; */
+
+
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+        background: black;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: red;
+    }
+}
+
+body {
+
+    background: black;
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: .1rem;
+        width: 100%;
+        height: 5%;
+        background: white;
+        z-index: -1;
+    }
+
+    span {
+        font-size: 3rem;
+        color: white;
+        background: black;
+        padding: .5rem 1.5rem;
+        border: .1rem solid white;
+        border-radius: .5rem;
+    }
+
+}
+
+.features .box-container .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+
+    .image img {
+        height: 35rem;
+        width: 35rem;
+        display: inline-block;
+    }
+
+    .image img:hover {
+        transform: scale(1.1);
+    }
+
+    .content img {
+        height: 35rem;
+        width: 35rem;
+
+    }
+
+    .content:hover {
+        transform: scale(1.1);
+    }
+
+    .content h3 {
+        color: red;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .content p {
+        color: white;
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+
+    .content h3 {
+        margin-top: -20px;
+    }
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    padding-right: 3rem;
+    background: linear-gradient(130deg, red 93%, transparent 90%);
+    color: white;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.header {
+    /* border: 5px solid blue; */
+    margin-top: .9rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 9%;
+    z-index: 10000;
+    background-color: black;
+
+    .logo {
+        font-weight: bolder;
+        color: white;
+        font-size: 2.5rem;
+
+        span {
+            color: red;
+        }
+    }
+
+    .navbar a {
+        /* display: inline-block; */
+        padding: 1.5rem 2.5rem;
+        font-size: 1.7rem;
+        color: white;
+    }
+
+    .navbar a:hover {
+        background: red;
+        border-radius: 1.5rem;
+    }
+
+}
+
+#menu-btn {
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.home {
+    padding: 0;
+    margin-top: 6.5rem;
+
+    .slide {
+        min-height: 70vh;
+        background-size: cover !important;
+        background-position: center !important;
+        padding: 2rem 9%;
+        display: flex;
+        align-items: center;
+
+        .content {
+            width: 60rem;
+
+            span {
+                display: block;
+                font-size: 2rem;
+                color: red;
+            }
+
+            h3 {
+                font-size: 5rem;
+                color: white;
+                padding: 1rem 0;
+            }
+        }
+    }
+
+}
+
+/* For Design the Next Button in Home Section.. */
+
+.swiper-pagination-bullet {
+    height: 2rem;
+    width: 2rem;
+    background: white;
+    border-radius: 0%;
+
+    &.swiper-pagination-bullet-active {
+        background: red;
+    }
+
+}
+
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8rem;
+
+
+    .image {
+        flex: 1 1 42rem;
+        position: relative;
+
+        /* Use pseudo selectors */
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background: red;
+            height: 15rem;
+            width: 15rem;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        img {
+            width: 100%;
+            padding: 2rem;
+        }
+    }
+
+    .content {
+        flex: 1 1 42rem;
+
+        span {
+            font-size: 2rem;
+            color: red;
+        }
+
+        .title {
+            font-size: 4rem;
+            color: white;
+            margin-top: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: white;
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+
+            .box {
+                flex: 1 1 20rem;
+
+                h3 {
+                    font-size: 2rem;
+                    color: white;
+                }
+
+                i {
+                    padding-right: 1.5rem;
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+/* Pricing css */
+
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    .plan:hover {
+        transform: scale(1.1);
+
+    }
+
+    .information {
+
+        span {
+            font-size: 2rem;
+            color: red;
+        }
+
+        h3 {
+            font-size: 4rem;
+            padding-top: .5rem;
+            color: white;
+            margin-bottom: .5rem;
+        }
+
+        p {
+            line-height: 1;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        i {
+            margin-right: 1rem;
+            color: red;
+        }
+    }
+}
+
+.plan {
+    text-align: center;
+    padding: 2rem;
+
+    &.basic,
+    &.pre {
+        /* background: linear-gradient(130deg , rgb(33, 30, 30) 93%, transparent  90%); */
+        border-radius: 34px;
+        background: linear-gradient(315deg, #32262e, #3b2d37);
+        box-shadow: -5px -5px 10px #31252d,
+            5px 5px 10px #3d2f39;
+    }
+
+
+
+    h3 {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+        color: white;
+    }
+
+    .price {
+        font-size: 3rem;
+        font-weight: bolder;
+        color: red;
+
+        span {
+            color: white;
+            font-size: 2.8rem;
+        }
+    }
+
+    .list {
+
+        padding: 1rem 0;
+
+        p {
+            line-height: 1;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        i {
+            margin-right: 1rem;
+            color: red;
+        }
+    }
+}
+
+/* Trainers section.. */
+
+.trainers .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    gap: -20rem;
+    flex-wrap: wrap;
+
+
+    .box {
+        height: 40rem;
+        overflow: hidden;
+        position: relative;
+
+        &:hover .content {
+            transform: translateY(0);
+        }
+
+        img {
+            height: 34rem;
+            width: 25rem;
+            object-fit: cover;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgb(46, 37, 37);
+            padding: 2rem;
+            transform: translateY(6.5rem);
+
+            span {
+                font-size: 1.5rem;
+                color: red;
+            }
+
+            h3 a {
+                font-size: 2.2rem;
+                color: white;
+                padding-top: .5rem;
+            }
+
+            .share {
+                padding-top: 2rem;
+                margin-top: 1.5rem;
+                border-top: .1rem solid white;
+
+                a {
+                    font-size: 2rem;
+                    color: white;
+                    margin-right: 1.5rem;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+}
+
+
+/* Banner Section */
+
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.7)), url(./images/banner.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+    span {
+        font-size: 2rem;
+        color: red;
+    }
+
+    h3 {
+        padding-top: 1rem;
+        color: white;
+        text-transform: uppercase;
+        font-size: 3.5rem;
+    }
+
+    p {
+
+        margin-left: 25rem;
+        max-width: 60rem;
+        font-size: 1.5rem;
+        color: white;
+        line-height: 2;
+    }
+}
+
+
+/* Review section */
+
+.review {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+
+    .information {
+        flex: 1 1 35rem;
+
+        span {
+            font-size: 2rem;
+            color: red;
+        }
+
+        h3 {
+            font-size: 3rem;
+            color: white;
+            padding-top: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 2;
+            color: white;
+            padding: 1rem 0;
+        }
+    }
+
+    .review-slider {
+        flex: 1 1 60rem;
+
+        .slide {
+            background: linear-gradient(315deg, #222222, #222222);
+            box-shadow: -5px -5px 10px #434242, 5px 5px 10px #434242;
+            padding: 2rem 3rem;
+
+            p {
+                font-size: 1.5rem;
+                line-height: 2;
+                color: white;
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                margin: 1.5rem;
+
+                img {
+                    height: 5rem;
+                    width: 5rem;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    margin-right: 1rem;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    color: white;
+                }
+
+                span {
+                    color: red;
+                    font-size: 1.5rem;
+                }
+
+                i {
+                    font-size: 5rem;
+                    margin-right: 2rem;
+                    color: red;
+                    margin-left: auto;
+                }
+            }
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media(max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        /* It provide some gap between anchor tag and BEFIT ke bich me.. */
+        padding: 0px 2rem;
+    }
+
+    section {
+        padding: 2rem 3rem;
+    }
+}
+
+@media(max-width:768px) {
+
+    #menu-btn {
+        /* Ke help se hum show bar icon  */
+        display: inline;
+
+        /* This way use ampersand sign and write class name means js class use css me like this manner.. */
+        &.fa-times {
+            transform: rotate(180deg);
+        }
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0px;
+        right: 0px;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+
+        /* TO access Navbar by , &.active with help we access this particular class which created in js . */
+        &.active {
+            clip-path: polygon(0 0, 100% 0, 100% 98%, 0 100%);
+        }
+
+
+
+        a {
+            display: block;
+            font-size: 2rem;
+        }
+    }
+}
+
+.about {
+    gap: 3rem;
+
+    .image {
+        margin-top: 5rem;
+    }
+
+    .content .title {
+        font-size: 3rem;
+    }
+}
+
+@media(min-width:0px) and (max-width:767px) {
+    html {
+        font-size: 30%;
+    }
+
+    .navbar a {
+        background: black;
+    }
+
+    .about {
+        gap: 3rem;
+
+        .image {
+            margin-top: 5rem;
+        }
+
+        .content .title {
+            font-size: 3rem;
+        }
+    }
+}
